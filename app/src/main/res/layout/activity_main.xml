@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_gradient">
+
+    <!-- ===== Decorative glow orbs ===== -->
+    <View
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-40dp"
+        android:layout_marginEnd="-50dp"
+        android:alpha="0.25"
+        android:background="@drawable/bg_dot_active"
+        android:backgroundTint="#818CF8" />
+
+    <View
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="-60dp"
+        android:layout_marginStart="-60dp"
+        android:alpha="0.25"
+        android:background="@drawable/bg_dot_active"
+        android:backgroundTint="#312597" />
+
+    <!-- ===== Centered logo + name + tagline ===== -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingHorizontal="30dp">
+
+        <FrameLayout
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:background="@drawable/bg_logo_badge"
+            android:layout_marginBottom="22dp">
+
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_gymtelligence_logo"
+                android:contentDescription="@null" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="-0.01"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_tagline"
+            android:textColor="#A6A9E0FF"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp" />
+
+    </LinearLayout>
+
+    <!-- ===== Loading dots ===== -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="60dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/bg_dot_active" />
+
+        <View
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/bg_dot_inactive" />
+
+        <View
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:background="@drawable/bg_dot_inactive" />
+
+    </LinearLayout>
+
+</FrameLayout>

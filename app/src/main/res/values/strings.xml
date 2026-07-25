@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gymtelligence</string>
+    <string name="splash_tagline">Your training plan, rebuilt around you — every single day</string>
+
+    <!-- Screen 1: About You -->
+    <string name="about_you_title">Tell us about you</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="height_label">Height</string>
+    <string name="weight_label">Current weight</string>
+
+    <!-- Screen 2: Your Goal -->
+    <string name="your_goal_title">What\'s your main goal?</string>
+    <string name="goal_get_stronger">Get stronger</string>
+    <string name="goal_build_muscle">Build muscle mass</string>
+    <string name="goal_get_lean">Get lean and defined</string>
+    <string name="goal_reduce_bodyweight">Reduce bodyweight</string>
+    <string name="focus_areas_label">Focus areas</string>
+    <string name="focus_chest">Chest</string>
+    <string name="focus_back">Back</string>
+    <string name="focus_legs">Legs</string>
+    <string name="focus_arms">Arms</string>
+    <string name="focus_full_body">Full body</string>
+
+    <!-- Screen 3: Your Level -->
+    <string name="your_level_title">Estimate your 1RM</string>
+    <string name="your_level_subtitle">Adjust the weight and reps below — your 1RM updates live.</string>
+    <string name="exercise_label">Exercise</string>
+    <string name="weight_lifted_label">Weight lifted</string>
+    <string name="reps_till_tired_label">Reps till tired</string>
+    <string name="estimated_1rm_label">Estimated 1RM</string>
+    <string name="beginner_no_estimate_link">I\'m a beginner and I don\'t know</string>
+
+    <!-- Screen 4: Your Setup -->
+    <string name="your_setup_title">Your training setup</string>
+    <string name="days_per_week_label">Days per week</string>
+    <string name="equipment_label">Equipment</string>
+    <string name="equipment_all">All equipment</string>
+    <string name="equipment_dumbbells">Dumbbells</string>
+    <string name="equipment_bodyweight">Bodyweight only</string>
+    <string name="equipment_machines">Machines</string>
+
+    <string name="btn_next">Next</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_generate_plan">Generate Plan</string>
+</resources>

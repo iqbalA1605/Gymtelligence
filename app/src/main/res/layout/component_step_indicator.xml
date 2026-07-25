@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reusable onboarding progress indicator.
+  Include this at the top of each onboarding screen and set the
+  active step via code: e.g. binding.stepIndicator.step1Dot...
+  Usage: <include layout="@layout/component_step_indicator" android:id="@+id/stepIndicator"/>
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="8dp">
+
+    <View
+        android:id="@+id/step1Dot"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="6dp"
+        android:background="@color/gw_step_active" />
+
+    <View
+        android:id="@+id/step2Dot"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="6dp"
+        android:background="@color/gw_step_inactive" />
+
+    <View
+        android:id="@+id/step3Dot"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="6dp"
+        android:background="@color/gw_step_inactive" />
+
+    <View
+        android:id="@+id/step4Dot"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_weight="1"
+        android:background="@color/gw_step_inactive" />
+
+</LinearLayout>

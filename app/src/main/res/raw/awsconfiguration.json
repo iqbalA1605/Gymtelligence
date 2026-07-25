@@ -1,0 +1,22 @@
+{
+  "UserAgent": "MobileHub/1.0",
+  "Version": "1.0",
+  "IdentityManager": {
+    "Default": {}
+  },
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "eu-north-1:1f13c66a-d9df-47d0-aaff-26c239eafa85",
+        "Region": "eu-north-1"
+      }
+    }
+  },
+  "CognitoUserPool": {
+    "Default": {
+      "PoolId": "eu-north-1_kfzo4daeo",
+      "AppClientId": "5clhqqoitntkohfscoman993uv",
+      "Region": "eu-north-1"
+    }
+  }
+}

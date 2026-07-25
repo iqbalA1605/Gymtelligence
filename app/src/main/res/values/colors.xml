@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Gym App Design System ===== -->
+    <color name="gw_primary">#4338CA</color>
+    <color name="gw_primary_dark">#312597</color>
+    <color name="gw_primary_light">#F1F0FE</color>
+
+    <color name="gw_background">#FFFFFF</color>
+    <color name="gw_surface">#FFFFFF</color>
+
+    <color name="gw_text_primary">#111111</color>
+    <color name="gw_text_secondary">#6B7280</color>
+    <color name="gw_text_hint">#9CA3AF</color>
+    <color name="gw_text_on_primary">#FFFFFF</color>
+
+    <color name="gw_border">#E5E5E5</color>
+    <color name="gw_disabled">#D1D1D1</color>
+
+    <color name="gw_step_active">#4338CA</color>
+    <color name="gw_step_inactive">#EAEAEA</color>
+</resources>

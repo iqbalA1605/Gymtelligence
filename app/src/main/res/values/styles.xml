@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ===== Buttons ===== -->
+    <style name="GwPrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/gw_primary</item>
+        <item name="android:textColor">@color/gw_text_on_primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
+
+    <style name="GwSecondaryButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/gw_border</item>
+        <item name="android:textColor">@color/gw_text_primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">14dp</item>
+    </style>
+
+    <!-- ===== Option cards (goal cards, equipment cards, day cards) ===== -->
+    <style name="GwOptionCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/gw_surface</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">1.3dp</item>
+        <item name="strokeColor">@color/gw_border</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- ===== Focus-area chips ===== -->
+    <style name="GwChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background_selector</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="chipStrokeColor">@color/gw_border</item>
+        <item name="chipStrokeWidth">1.3dp</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+
+    <!-- ===== Stepper +/- circular buttons (height, weight, 1RM inputs) ===== -->
+    <style name="GwStepperButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/gw_border</item>
+        <item name="android:textColor">@color/gw_text_primary</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minWidth">36dp</item>
+        <item name="android:minHeight">36dp</item>
+    </style>
+
+    <!-- ===== Gender / unit toggle pill ===== -->
+    <style name="GwToggleButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="strokeColor">@color/gw_border</item>
+        <item name="android:textColor">@color/toggle_text_selector</item>
+        <item name="backgroundTint">@color/toggle_background_selector</item>
+    </style>
+
+    <!-- ===== Misc ===== -->
+    <style name="GwDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gw_border</item>
+    </style>
+
+    <style name="OtpBoxStyle">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@drawable/bg_otp_box</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:cursorVisible">true</item>
+    </style>
+
+    <!-- Home Screen -->
+    <string name="welcome_back">Welcome back</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_connect">Connect</string>
+    <string name="nav_report">Report</string>
+    <string name="nav_profile">Profile</string>
+    <string name="readiness_score_label">Readiness score</string>
+    <string name="smartwatch_label">Smartwatch</string>
+    <string name="phone_sensors_label">Phone sensors</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_not_connected">Not connected</string>
+    <string name="sessions_completed_label">Sessions completed this week</string>
+    <string name="profile_gender">Gender</string>
+    <string name="profile_height">Height</string>
+    <string name="profile_weight">Weight</string>
+    <string name="profile_fitness_level">Fitness level</string>
+    <string name="profile_current_goal">Current goal</string>
+
+
+
+</resources>

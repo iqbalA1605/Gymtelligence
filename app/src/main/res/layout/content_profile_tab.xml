@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contentProfileTab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gw_background"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/gw_surface"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_profile"
+            android:textColor="@color/gw_text_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/GwOptionCard"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textProfileAvatarInitial"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:gravity="center"
+                android:text="I"
+                android:textColor="@color/gw_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_icon_circle"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iqbal"
+                android:textColor="@color/gw_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/GwOptionCard"
+        android:layout_marginHorizontal="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/profile_gender" android:textColor="@color/gw_text_secondary" android:textSize="13sp" />
+                <TextView android:id="@+id/textProfileGender" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Male" android:textColor="@color/gw_text_primary" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <View style="@style/GwDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/profile_height" android:textColor="@color/gw_text_secondary" android:textSize="13sp" />
+                <TextView android:id="@+id/textProfileHeight" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="5'8&quot;" android:textColor="@color/gw_text_primary" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <View style="@style/GwDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/profile_weight" android:textColor="@color/gw_text_secondary" android:textSize="13sp" />
+                <TextView android:id="@+id/textProfileWeight" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="70 kg" android:textColor="@color/gw_text_primary" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <View style="@style/GwDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/profile_fitness_level" android:textColor="@color/gw_text_secondary" android:textSize="13sp" />
+                <TextView android:id="@+id/textProfileFitnessLevel" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Intermediate" android:textColor="@color/gw_text_primary" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <View style="@style/GwDivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/profile_current_goal" android:textColor="@color/gw_text_secondary" android:textSize="13sp" />
+                <TextView android:id="@+id/textProfileGoal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Get stronger" android:textColor="@color/gw_text_primary" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
