@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/contentConnectTab"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,7 +27,9 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardConnectSmartwatch"
         style="@style/GwOptionCard"
-        android:layout_margin="16dp">
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,8 +43,7 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_nav_connect"
                 app:tint="@color/gw_primary"
-                android:contentDescription="@null"
-                xmlns:app="http://schemas.android.com/apk/res-auto" />
+                android:contentDescription="@null" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -72,7 +74,9 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardConnectPhone"
         style="@style/GwOptionCard"
-        android:layout_marginHorizontal="16dp">
+        android:layout_marginHorizontal="16dp"
+        android:clickable="true"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,8 +90,7 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_nav_profile"
                 app:tint="@color/gw_primary"
-                android:contentDescription="@null"
-                xmlns:app="http://schemas.android.com/apk/res-auto" />
+                android:contentDescription="@null" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -114,5 +117,39 @@
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/healthStatsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:background="@drawable/bg_edittext"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textStepsValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gw_text_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textHeartRateValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/gw_text_primary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textSleepValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/gw_text_primary"
+            android:textSize="14sp" />
+    </LinearLayout>
 
 </LinearLayout>

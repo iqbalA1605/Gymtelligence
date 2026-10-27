@@ -8,6 +8,8 @@ public class OnboardingSession {
 
     private static OnboardingSession instance;
 
+    private String fullName;
+
     // --- Screen 1: About You ---
     private String gender;          // "Male" / "Female"
     private double heightCm;
@@ -40,6 +42,9 @@ public class OnboardingSession {
     public static void reset() {
         instance = null;
     }
+
+    public String getFullName() { return fullName; }
+    public void setFullName(String fullName) { this.fullName = fullName; }
 
     // --- About You ---
     public String getGender() { return gender; }

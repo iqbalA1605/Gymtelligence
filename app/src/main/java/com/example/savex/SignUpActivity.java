@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -57,6 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onError(Exception e) {
+                Log.e("AWS_AUTH", "AWS Initialisation Failed", e);
                 runOnUiThread(() -> showError("Could not connect to authentication service"));
             }
         });
@@ -116,6 +118,8 @@ public class SignUpActivity extends AppCompatActivity {
         hideError();
         setLoading(true);
 
+        com.example.savex.model.OnboardingSession.getInstance().setFullName(name);
+
         Map<String, String> userAttributes = new HashMap<>();
         userAttributes.put("email", email);
         userAttributes.put("name", name);
@@ -139,6 +143,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Exception e) {
+                        Log.e("SIGNUP_FAILURE", "Sign up error: " + e.getClass().getSimpleName(), e);
                         runOnUiThread(() -> {
                             setLoading(false);
                             showError(AuthErrorMapper.toUserMessage(e));

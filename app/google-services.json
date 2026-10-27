@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553943555318",
+    "project_id": "gymtelligence-f1425",
+    "storage_bucket": "gymtelligence-f1425.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553943555318:android:08bb91d76151198c2020d7",
+        "android_client_info": {
+          "package_name": "com.example.savex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-expPUrngy59sXNCQZGEO64PvXxsePs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

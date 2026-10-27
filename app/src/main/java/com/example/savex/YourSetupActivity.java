@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.savex.databinding.ActivityYourSetupBinding;
-import com.example.savex.model.DynamoDbHelper;
+import com.example.savex.model.FirestoreHelper;
 import com.example.savex.model.OnboardingSession;
 import com.example.savex.model.UserProfile;
 import com.google.android.material.card.MaterialCardView;
@@ -18,7 +18,7 @@ public class YourSetupActivity extends AppCompatActivity {
     private ActivityYourSetupBinding binding;
 
     private MaterialCardView selectedDaysCard;
-    private int selectedDays = 4; // default matches the mockup
+    private int selectedDays = 4;
 
     private MaterialCardView selectedEquipmentCard;
     private OnboardingSession.EquipmentType selectedEquipment = OnboardingSession.EquipmentType.ALL;
@@ -45,7 +45,7 @@ public class YourSetupActivity extends AppCompatActivity {
     }
 
     private void setupDaysCards() {
-        selectDaysCard(binding.cardDays4, 4); // pre-selected default
+        selectDaysCard(binding.cardDays4, 4);
 
         binding.cardDays4.setOnClickListener(v -> selectDaysCard(binding.cardDays4, 4));
         binding.cardDays5.setOnClickListener(v -> selectDaysCard(binding.cardDays5, 5));
@@ -64,7 +64,7 @@ public class YourSetupActivity extends AppCompatActivity {
     }
 
     private void setupEquipmentCards() {
-        selectEquipmentCard(binding.cardEquipAll, OnboardingSession.EquipmentType.ALL); // default
+        selectEquipmentCard(binding.cardEquipAll, OnboardingSession.EquipmentType.ALL);
 
         binding.cardEquipAll.setOnClickListener(v ->
                 selectEquipmentCard(binding.cardEquipAll, OnboardingSession.EquipmentType.ALL));
@@ -97,9 +97,8 @@ public class YourSetupActivity extends AppCompatActivity {
     }
 
     /**
-     * The single most important method in the onboarding flow:
-     * saves the final screen's data to DynamoDB (keyed to the signed-in
-     * user's Cognito identity) and routes to HomeActivity. From this point
+     * Saves the final onboarding data to Firestore (keyed to the signed-in
+     * user's Cognito user ID) and routes to HomeActivity. From this point
      * on, MainActivity's router will find this profile and always skip
      * onboarding for this user.
      */
@@ -109,6 +108,7 @@ public class YourSetupActivity extends AppCompatActivity {
         session.setEquipmentType(selectedEquipment);
 
         UserProfile profile = new UserProfile();
+        profile.fullName = session.getFullName();
         profile.gender = session.getGender();
         profile.heightCm = session.getHeightCm();
         profile.weightKg = session.getWeightKg();
@@ -123,7 +123,7 @@ public class YourSetupActivity extends AppCompatActivity {
                 ? session.getEquipmentType().name()
                 : OnboardingSession.EquipmentType.ALL.name();
 
-        DynamoDbHelper.saveUserProfile(getApplicationContext(), profile, new DynamoDbHelper.WriteCallback() {
+        FirestoreHelper.saveUserProfile(getApplicationContext(), profile, new FirestoreHelper.WriteCallback() {
             @Override
             public void onSuccess() {
                 runOnUiThread(() -> {

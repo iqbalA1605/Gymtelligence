@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- ===== Gym App Design System ===== -->
-    <color name="gw_primary">#4338CA</color>
-    <color name="gw_primary_dark">#312597</color>
-    <color name="gw_primary_light">#F1F0FE</color>
+    <color name="gw_primary">#B6FF00</color>
+    <color name="gw_primary_dark">#8FCC00</color>
+    <color name="gw_primary_light">#2A331A</color>
 
-    <color name="gw_background">#FFFFFF</color>
-    <color name="gw_surface">#FFFFFF</color>
+    <color name="gw_background">#0B0D0C</color>
+    <color name="gw_surface">#151817</color>
+    <color name="gw_surface_secondary">#202423</color>
 
-    <color name="gw_text_primary">#111111</color>
-    <color name="gw_text_secondary">#6B7280</color>
-    <color name="gw_text_hint">#9CA3AF</color>
-    <color name="gw_text_on_primary">#FFFFFF</color>
+    <color name="gw_action_primary">#F2F3F1</color>
+    <color name="gw_text_on_action_primary">#0B0D0C</color>
 
-    <color name="gw_border">#E5E5E5</color>
-    <color name="gw_disabled">#D1D1D1</color>
+    <color name="gw_text_primary">#FFFFFF</color>
+    <color name="gw_text_secondary">#9AA09D</color>
+    <color name="gw_text_hint">#6F7673</color>
+    <color name="gw_text_on_primary">#0B0D0C</color>
 
-    <color name="gw_step_active">#4338CA</color>
-    <color name="gw_step_inactive">#EAEAEA</color>
+    <color name="gw_border">#2A2E2C</color>
+    <color name="gw_disabled">#3A3E3C</color>
+
+    <color name="gw_step_active">#B6FF00</color>
+    <color name="gw_step_inactive">#3A3E3C</color>
+
+    <color name="gw_success">#35D07F</color>
+    <color name="gw_warning">#FFB020</color>
+    <color name="gw_error">#FF5252</color>
+
+    <color name="report_bg">#0B0D0C</color>
+    <color name="report_card">#151817</color>
+    <color name="report_secondary">#202423</color>
+    <color name="report_text">#FFFFFF</color>
+    <color name="report_text_secondary">#9AA09D</color>
+    <color name="report_text_muted">#6F7673</color>
+    <color name="report_accent">#B6FF00</color>
+    <color name="report_success">#35D07F</color>
+    <color name="report_warning">#FFB020</color>
+    <color name="report_error">#FF5252</color>
 </resources>

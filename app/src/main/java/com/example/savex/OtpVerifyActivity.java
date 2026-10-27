@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -129,6 +130,7 @@ public class OtpVerifyActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Exception e) {
+                        Log.e("OTP_VERIFY", "Verification failed", e);
                         runOnUiThread(() -> {
                             setLoading(false);
                             showError(e.getMessage() != null ? e.getMessage() : "Invalid code. Try again.");
@@ -159,6 +161,7 @@ public class OtpVerifyActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Exception e) {
+                        Log.e("SIGNIN_AFTER_CONFIRM", "Sign in failed", e);
                         runOnUiThread(() -> {
                             setLoading(false);
                             showError("Verified, but sign-in failed: " + (e.getMessage() != null ? e.getMessage() : "unknown error"));
@@ -181,6 +184,7 @@ public class OtpVerifyActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Exception e) {
+                        Log.e("RESEND_OTP", "Resend failed", e);
                         runOnUiThread(() -> Toast.makeText(OtpVerifyActivity.this, "Could not resend code", Toast.LENGTH_SHORT).show());
                     }
                 }

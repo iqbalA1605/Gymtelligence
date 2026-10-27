@@ -13,7 +13,7 @@
         android:layout_marginEnd="-50dp"
         android:alpha="0.25"
         android:background="@drawable/bg_dot_active"
-        android:backgroundTint="#818CF8" />
+        android:backgroundTint="@color/gw_primary" />
 
     <View
         android:layout_width="220dp"
@@ -23,7 +23,7 @@
         android:layout_marginStart="-60dp"
         android:alpha="0.25"
         android:background="@drawable/bg_dot_active"
-        android:backgroundTint="#312597" />
+        android:backgroundTint="@color/gw_primary_dark" />
 
     <!-- ===== Centered logo + name + tagline ===== -->
     <LinearLayout
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/gw_text_primary"
             android:textSize="26sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif-medium"
@@ -63,7 +63,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:text="@string/splash_tagline"
-            android:textColor="#A6A9E0FF"
+            android:textColor="@color/gw_text_secondary"
             android:textSize="13sp"
             android:gravity="center"
             android:lineSpacingExtra="3dp" />

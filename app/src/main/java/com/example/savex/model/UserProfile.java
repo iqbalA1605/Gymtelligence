@@ -11,6 +11,7 @@ public class UserProfile {
 
     // --- Account (filled in later by Step 6 — Register/OTP) ---
     public String email;
+    public String fullName;
 
     // --- Screen 1: About You ---
     public String gender;

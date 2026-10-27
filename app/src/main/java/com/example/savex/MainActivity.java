@@ -10,6 +10,8 @@ import com.amazonaws.mobile.client.Callback;
 import com.amazonaws.mobile.client.UserState;
 import com.amazonaws.mobile.client.UserStateDetails;
 import com.example.savex.databinding.ActivityMainBinding;
+import com.example.savex.model.FirestoreHelper;
+import com.example.savex.model.UserProfile;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResult(UserStateDetails userStateDetails) {
                 if (userStateDetails.getUserState() == UserState.SIGNED_IN) {
-                    routeTo(HomeActivity.class);
+                    checkProfileAndRoute();
                 } else {
-                    routeTo(SignUpActivity.class); // new device / no session
+                    routeTo(SignUpActivity.class);
                 }
             }
 
@@ -38,8 +40,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void checkProfileAndRoute() {
+        FirestoreHelper.getUserProfile(getApplicationContext(), new FirestoreHelper.ProfileCallback() {
+            @Override
+            public void onSuccess(UserProfile profile) {
+                runOnUiThread(() -> routeTo(profile != null ? HomeActivity.class : AboutYouActivity.class));
+            }
+
+            @Override
+            public void onError(Exception e) {
+                runOnUiThread(() -> routeTo(AboutYouActivity.class));
+            }
+        });
+    }
+
     private void routeTo(Class<?> destination) {
         startActivity(new Intent(MainActivity.this, destination));
-        finish(); // remove splash from the back stack so Back doesn't return to it
+        finish();
     }
 }

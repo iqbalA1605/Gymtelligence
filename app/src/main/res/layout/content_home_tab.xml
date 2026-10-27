@@ -33,11 +33,11 @@
                     android:id="@+id/textUserPlanTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
                     android:text="Today's Plan"
                     android:textColor="@color/gw_text_primary"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="2dp" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
@@ -54,14 +54,14 @@
                         android:id="@+id/textPlanBadge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Today · Push Day"
-                        android:textColor="@color/gw_primary"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"
                         android:background="@color/gw_primary_light"
                         android:paddingHorizontal="10dp"
                         android:paddingVertical="4dp"
-                        android:layout_marginBottom="10dp" />
+                        android:text="Today · Push Day"
+                        android:textColor="@color/gw_primary"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/textPlanTitle"
@@ -76,10 +76,18 @@
                         android:id="@+id/textPlanSubtitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:text="4 exercises · ~50 min · Moderate intensity"
                         android:textColor="@color/gw_text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="10dp" />
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/carryOverContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" />
+                    <!-- Carry-over rows added dynamically in Java -->
 
                     <LinearLayout
                         android:id="@+id/exerciseListContainer"
@@ -87,6 +95,16 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical" />
                     <!-- Exercise rows added dynamically in Java -->
+
+                    <Button
+                        android:id="@+id/btnFinishWorkout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="#2563EB"
+                        android:text="Finish workout"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -107,18 +125,18 @@
                         android:id="@+id/textReadinessScore"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
+                        android:background="@drawable/bg_icon_circle"
                         android:gravity="center"
                         android:text="84"
                         android:textColor="@color/gw_primary"
                         android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:background="@drawable/bg_icon_circle" />
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="14dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
@@ -137,6 +155,73 @@
                             android:textSize="13sp"
                             android:textStyle="bold" />
                     </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/GwOptionCard"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Today's Activity"
+                        android:textColor="@color/gw_text_secondary"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/textHomeSteps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Steps: --"
+                        android:textColor="@color/gw_text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textHomeHeartRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Heart rate: --"
+                        android:textColor="@color/gw_text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textHomeSleep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Sleep: --"
+                        android:textColor="@color/gw_text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textStepInsight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text=""
+                        android:textColor="@color/gw_text_secondary"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/textSleepInsight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text=""
+                        android:textColor="@color/gw_text_secondary"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

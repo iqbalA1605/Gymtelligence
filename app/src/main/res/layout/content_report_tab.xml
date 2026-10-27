@@ -4,67 +4,322 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/gw_background"
+    android:background="@color/report_bg"
     android:visibility="gone">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/gw_surface"
-        android:padding="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nav_report"
-            android:textColor="@color/gw_text_primary"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <com.google.android.material.card.MaterialCardView
-        style="@style/GwOptionCard"
-        android:layout_margin="16dp">
-
-        <LinearLayout
-            android:id="@+id/weeklyReportContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp" />
-        <!-- 7 day rows added dynamically in Java -->
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        style="@style/GwOptionCard"
-        android:layout_marginHorizontal="16dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/textSessionsCompletedCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3/4"
-                android:textColor="@color/gw_primary"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sessions_completed_label"
-                android:textColor="@color/gw_text_secondary"
-                android:textSize="12sp"
-                android:layout_marginTop="2dp" />
+                android:text="Report"
+                android:textColor="@color/report_text"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Overall Progress -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/textOverallPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--%"
+                    android:textColor="@color/report_accent"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textOverallStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overall progress"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Goal Progress -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goal Progress"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/textGoalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not set"
+                    android:textColor="@color/report_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textGoalPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="--% toward goal"
+                    android:textColor="@color/report_accent"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Strength Progress -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Strength Progress"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/textStrengthSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not enough data yet"
+                    android:textColor="@color/report_text"
+                    android:textSize="14sp" />
+
+                <com.example.savex.model.LineChartView
+                    android:id="@+id/chartStrength"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <!-- Workout Consistency -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Workout Consistency"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/textConsistencySummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0/0 · 0% · streak 0"
+                    android:textColor="@color/report_text"
+                    android:textSize="14sp" />
+
+                <com.example.savex.model.BarChartView
+                    android:id="@+id/chartConsistency"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <!-- Body Progress (weight, current-only) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Body"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/textWeightCurrent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- kg"
+                    android:textColor="@color/report_text"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Weight tracking over time isn't available yet"
+                    android:textColor="@color/report_text_muted"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Recovery -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recovery"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/textRecoverySummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not enough data yet"
+                    android:textColor="@color/report_text"
+                    android:textSize="14sp" />
+
+                <com.example.savex.model.LineChartView
+                    android:id="@+id/chartReadiness"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <!-- Activity -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Activity"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/textActivitySummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not enough data yet"
+                    android:textColor="@color/report_text"
+                    android:textSize="14sp" />
+
+                <com.example.savex.model.BarChartView
+                    android:id="@+id/chartActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <!-- Personal Records -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_card"
+                android:padding="16dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Records"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="11sp"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/prContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/textLongestStreak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Longest streak: 0 days"
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- AI Summary -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/report_secondary"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AI Summary"
+                    android:textColor="@color/report_accent"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/textAiSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/report_text"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textAiRecommendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textColor="@color/report_text_secondary"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
+    </ScrollView>
 </LinearLayout>

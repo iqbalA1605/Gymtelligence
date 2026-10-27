@@ -1,0 +1,16 @@
+- [x] Create Profile UI assets (Icons, Bodybuilder, Backgrounds)
+    - [x] `bg_profile_hero_card.xml`
+    - [x] `ic_bodybuilder_silhouette.xml`
+    - [x] `bg_badge_stay_consistent.xml`
+    - [x] `ic_profile_gender.xml`
+    - [x] `ic_profile_height.xml`
+    - [x] `ic_profile_weight.xml`
+    - [x] `ic_profile_fitness.xml`
+    - [x] `ic_profile_goal.xml`
+    - [x] `ic_profile_header_logo.xml`
+- [x] Redesign `content_profile_tab.xml` layout
+    - [x] Implement Header with Logo
+    - [x] Implement Hero Card with Avatar, Name, Badge, and Silhouette
+    - [x] Implement Personal Information Card with styled rows
+    - [x] Ensure all existing IDs are preserved
+- [ ] Verify UI appearance and data binding

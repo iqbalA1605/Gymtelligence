@@ -12,7 +12,8 @@
     android:gravity="center_vertical"
     android:paddingHorizontal="24dp"
     android:paddingTop="20dp"
-    android:paddingBottom="8dp">
+    android:paddingBottom="8dp"
+    android:background="@color/gw_background">
 
     <View
         android:id="@+id/step1Dot"

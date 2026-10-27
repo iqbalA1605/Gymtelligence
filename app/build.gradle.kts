@@ -1,14 +1,16 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.application")
+    id("com.google.gms.google-services")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
     namespace = "com.example.savex"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.savex"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -33,10 +35,16 @@ android {
         viewBinding = true
     }
 }
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+    }
+}
 
 dependencies {
 
     implementation(libs.appcompat)
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
@@ -47,6 +55,10 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("com.amazonaws:aws-android-sdk-core:2.81.1")
     implementation("com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.81.1")
-    implementation("com.amazonaws:aws-android-sdk-ddb:2.81.1")
     implementation("com.amazonaws:aws-android-sdk-mobile-client:2.81.1")
+
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("androidx.health.connect:connect-client:1.1.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 }
